@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arun Pandiyan A | Arunpandiyan.in</title>
+    <title>Resume Builder</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="https://www.pngmart.com/files/13/Avengers-A-Letter-Logo-PNG-Image.png" type="image/x-icon">
@@ -98,27 +98,35 @@ html{
                 <h4>Education</h4>
             </div>
             <div class="row form-body">
-                <div class="col-lg-4 form-group mt-3">
+                <div class="col-lg-3 form-group mt-3">
                     <label for="fname">School/Clg Name</label>
-                    <input type="text" name="" id="" class="form-control" placeholder="First Name">
+                    <input type="text" name=""  class="form-control" placeholder="School/Clg Name">
                 </div>
                 <div class="col-lg-2 form-group  mt-3">
                     <label for="fname">Course</label>
-                    <input type="text" name="" id="" class="form-control" placeholder="Last Name">
+                    <input type="text" name=""  class="form-control" placeholder="Course">
                 </div>
                 <div class="col-lg-2 form-group  mt-3">
                     <label for="fname">Location</label>
-                    <input type="text" name="" id="" class="form-control" placeholder="Last Name">
+                    <input type="text" name=""  class="form-control" placeholder="location">
                 </div>
                 <div class="col-lg-2 form-group  mt-3">
-                    <label for="fname">in/Out</label>
-                    <input type="text" name="" id="" class="form-control" placeholder="Last Name">
+                    <label for="fname">passed out</label>
+                    <input type="date" name=""  class="form-control" placeholder="passedout year">
                 </div>
                 <div class="col-lg-2 form-group  mt-3">
                     <label for="fname">Percentage</label>
-                    <input type="text" name="" id="" class="form-control" placeholder="Last Name">
+                    <input type="text" name=""  class="form-control" placeholder="percentage">
+                </div>
+                <div class="col-lg-1 form-group  mt-3">
+                    <label for="fname"></label>
+                    <button class="btn btn-primary mt-4" id="add-edu"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    
                 </div>
             </div>
+            <div class="clone-form col-lg-12">
+            </div>
+            
         </div>
                 ';
             }
@@ -127,5 +135,46 @@ html{
         
         
     </div>
+    <script src="https://arunpandiyan.in/assets/js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#add-edu").click(function(){
+                $(".clone-form").append(`
+                <div class="row form-body">
+                    <div class="col-lg-3 form-group mt-3">
+                        <label for="fname">School/Clg Name</label>
+                        <input type="text" name=""  class="form-control" placeholder="School/Clg Name">
+                    </div>
+                    <div class="col-lg-2 form-group  mt-3">
+                        <label for="fname">Course</label>
+                        <input type="text" name=""  class="form-control" placeholder="Course">
+                    </div>
+                    <div class="col-lg-2 form-group  mt-3">
+                        <label for="fname">Location</label>
+                        <input type="text" name=""  class="form-control" placeholder="location">
+                    </div>
+                    <div class="col-lg-2 form-group  mt-3">
+                        <label for="fname">passed out</label>
+                        <input type="date" name=""  class="form-control" placeholder="passedout year">
+                    </div>
+                    <div class="col-lg-2 form-group  mt-3">
+                        <label for="fname">Percentage</label>
+                        <input type="text" name=""  class="form-control" placeholder="percentage">
+                    </div>
+                    <div class="col-lg-1 form-group  mt-3">
+                        <label for="fname"></label>
+                        
+                        <button class="btn btn-danger remove-edu" style="margin-top: 27px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                `);
+            });
+            $(document).on('click', '.remove-edu', function(){
+                $(this).closest(".form-body").remove();
+            })
+        });
+
+    </script>
+
 </body>
 </html>
